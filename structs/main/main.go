@@ -21,7 +21,7 @@ func main() {
 			zipCode: 95112,
 		},
 	}
-	(&human1).updateName("Joe")
+	human1.updateName("Joe")
 	human1.print()
 }
 
@@ -31,6 +31,9 @@ func (p person) print() {
 
 // will not update
 // go is pass by value
+// with slice it will update without even the pointer, it's reference type
+// reference type: map, slice, channel, pointer, function
+// value type: int, bool, float, string, struct
 func (pPointer *person) updateName(newName string) {
 	(*pPointer).firstName = newName
 }
